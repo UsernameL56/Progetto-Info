@@ -34,14 +34,14 @@ namespace Progetto_Info
 
         private void buttonLogin_Click(object sender, EventArgs e)
         {
-            Form2 form2 = new Form2();
+            Form2 form2 = new Form2(this);
             form2.Show();
             this.Hide();
         }
 
         private void buttonRegister_Click(object sender, EventArgs e)
         {
-            Form2 form2 = new Form2();
+            Form2 form2 = new Form2(this);
             form2.Show();
             this.Hide();
         }
