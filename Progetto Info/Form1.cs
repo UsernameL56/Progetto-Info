@@ -16,5 +16,34 @@ namespace Progetto_Info
         {
             InitializeComponent();
         }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            buttonLoginPanel.PerformClick();
+        }
+
+        private void buttonLoginPanel_Click(object sender, EventArgs e)
+        {
+            panelLogin.BringToFront();
+        }
+
+        private void buttonRegisterPanel_Click(object sender, EventArgs e)
+        {
+            panelRegister.BringToFront();
+        }
+
+        private void buttonLogin_Click(object sender, EventArgs e)
+        {
+            Form2 form2 = new Form2();
+            form2.Show();
+            this.Hide();
+        }
+
+        private void buttonRegister_Click(object sender, EventArgs e)
+        {
+            Form2 form2 = new Form2();
+            form2.Show();
+            this.Hide();
+        }
     }
 }
