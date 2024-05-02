@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Net;
+using System.Net.Mail;
 
 namespace Progetto_Info
 {
@@ -33,6 +35,7 @@ namespace Progetto_Info
         private void temp_Click(object sender, EventArgs e)
         {
             groupBox1.Show();
+            groupBox1.BringToFront();
         }
 
         private void buttonCreaCorso_Click(object sender, EventArgs e)
@@ -43,6 +46,7 @@ namespace Progetto_Info
             groupBox.Height = 150;
             flowLayoutPanelCorsi.Controls.Add(groupBox);
             groupBox1.Hide();
+            flowLayoutPanelCorsi.BringToFront();
         }
     }
 }

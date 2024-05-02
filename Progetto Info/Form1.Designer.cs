@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.panelLogin = new System.Windows.Forms.Panel();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
@@ -48,6 +49,13 @@
             this.label3 = new System.Windows.Forms.Label();
             this.buttonLoginPanel = new System.Windows.Forms.Button();
             this.buttonRegisterPanel = new System.Windows.Forms.Button();
+            this.textBox8 = new System.Windows.Forms.TextBox();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.textBox9 = new System.Windows.Forms.TextBox();
+            this.textBox10 = new System.Windows.Forms.TextBox();
+            this.textBox11 = new System.Windows.Forms.TextBox();
+            this.textBox12 = new System.Windows.Forms.TextBox();
+            this.button1 = new System.Windows.Forms.Button();
             this.panelLogin.SuspendLayout();
             this.panelRegister.SuspendLayout();
             this.SuspendLayout();
@@ -237,11 +245,68 @@
             this.buttonRegisterPanel.UseVisualStyleBackColor = true;
             this.buttonRegisterPanel.Click += new System.EventHandler(this.buttonRegisterPanel_Click);
             // 
+            // textBox8
+            // 
+            this.textBox8.Location = new System.Drawing.Point(500, 82);
+            this.textBox8.Name = "textBox8";
+            this.textBox8.Size = new System.Drawing.Size(100, 20);
+            this.textBox8.TabIndex = 4;
+            // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
+            // 
+            // textBox9
+            // 
+            this.textBox9.Location = new System.Drawing.Point(606, 82);
+            this.textBox9.Name = "textBox9";
+            this.textBox9.Size = new System.Drawing.Size(100, 20);
+            this.textBox9.TabIndex = 6;
+            // 
+            // textBox10
+            // 
+            this.textBox10.Location = new System.Drawing.Point(500, 126);
+            this.textBox10.Name = "textBox10";
+            this.textBox10.Size = new System.Drawing.Size(100, 20);
+            this.textBox10.TabIndex = 7;
+            // 
+            // textBox11
+            // 
+            this.textBox11.Location = new System.Drawing.Point(500, 166);
+            this.textBox11.Name = "textBox11";
+            this.textBox11.Size = new System.Drawing.Size(100, 20);
+            this.textBox11.TabIndex = 8;
+            // 
+            // textBox12
+            // 
+            this.textBox12.Location = new System.Drawing.Point(528, 231);
+            this.textBox12.Multiline = true;
+            this.textBox12.Name = "textBox12";
+            this.textBox12.Size = new System.Drawing.Size(152, 73);
+            this.textBox12.TabIndex = 9;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(606, 108);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(100, 78);
+            this.button1.TabIndex = 14;
+            this.button1.Text = "send";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(740, 507);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.textBox12);
+            this.Controls.Add(this.textBox11);
+            this.Controls.Add(this.textBox10);
+            this.Controls.Add(this.textBox9);
+            this.Controls.Add(this.textBox8);
             this.Controls.Add(this.buttonRegisterPanel);
             this.Controls.Add(this.buttonLoginPanel);
             this.Controls.Add(this.panelRegister);
@@ -254,6 +319,7 @@
             this.panelRegister.ResumeLayout(false);
             this.panelRegister.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -279,6 +345,13 @@
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.Button buttonLoginPanel;
         private System.Windows.Forms.Button buttonRegisterPanel;
+        private System.Windows.Forms.TextBox textBox8;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+        private System.Windows.Forms.TextBox textBox9;
+        private System.Windows.Forms.TextBox textBox10;
+        private System.Windows.Forms.TextBox textBox11;
+        private System.Windows.Forms.TextBox textBox12;
+        private System.Windows.Forms.Button button1;
     }
 }
 
