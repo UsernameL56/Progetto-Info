@@ -36,11 +36,11 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.panelRegister = new System.Windows.Forms.Panel();
-            this.textBox7 = new System.Windows.Forms.TextBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.confPasswordRegistra = new System.Windows.Forms.TextBox();
+            this.passwordRegistra = new System.Windows.Forms.TextBox();
+            this.emailRegistra = new System.Windows.Forms.TextBox();
+            this.cognomeRegistra = new System.Windows.Forms.TextBox();
+            this.nomeRegistra = new System.Windows.Forms.TextBox();
             this.buttonRegister = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
@@ -56,8 +56,8 @@
             this.textBox11 = new System.Windows.Forms.TextBox();
             this.textBox12 = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
+            this.radioButtonStudente = new System.Windows.Forms.RadioButton();
+            this.radioButtonProfessore = new System.Windows.Forms.RadioButton();
             this.panelLogin.SuspendLayout();
             this.panelRegister.SuspendLayout();
             this.SuspendLayout();
@@ -121,13 +121,13 @@
             // panelRegister
             // 
             this.panelRegister.BackColor = System.Drawing.SystemColors.AppWorkspace;
-            this.panelRegister.Controls.Add(this.radioButton2);
-            this.panelRegister.Controls.Add(this.radioButton1);
-            this.panelRegister.Controls.Add(this.textBox7);
-            this.panelRegister.Controls.Add(this.textBox6);
-            this.panelRegister.Controls.Add(this.textBox5);
-            this.panelRegister.Controls.Add(this.textBox4);
-            this.panelRegister.Controls.Add(this.textBox3);
+            this.panelRegister.Controls.Add(this.radioButtonProfessore);
+            this.panelRegister.Controls.Add(this.radioButtonStudente);
+            this.panelRegister.Controls.Add(this.confPasswordRegistra);
+            this.panelRegister.Controls.Add(this.passwordRegistra);
+            this.panelRegister.Controls.Add(this.emailRegistra);
+            this.panelRegister.Controls.Add(this.cognomeRegistra);
+            this.panelRegister.Controls.Add(this.nomeRegistra);
             this.panelRegister.Controls.Add(this.buttonRegister);
             this.panelRegister.Controls.Add(this.label7);
             this.panelRegister.Controls.Add(this.label6);
@@ -139,40 +139,40 @@
             this.panelRegister.Size = new System.Drawing.Size(278, 288);
             this.panelRegister.TabIndex = 1;
             // 
-            // textBox7
+            // confPasswordRegistra
             // 
-            this.textBox7.Location = new System.Drawing.Point(115, 153);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(100, 20);
-            this.textBox7.TabIndex = 13;
+            this.confPasswordRegistra.Location = new System.Drawing.Point(115, 153);
+            this.confPasswordRegistra.Name = "confPasswordRegistra";
+            this.confPasswordRegistra.Size = new System.Drawing.Size(100, 20);
+            this.confPasswordRegistra.TabIndex = 13;
             // 
-            // textBox6
+            // passwordRegistra
             // 
-            this.textBox6.Location = new System.Drawing.Point(115, 124);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(100, 20);
-            this.textBox6.TabIndex = 12;
+            this.passwordRegistra.Location = new System.Drawing.Point(115, 124);
+            this.passwordRegistra.Name = "passwordRegistra";
+            this.passwordRegistra.Size = new System.Drawing.Size(100, 20);
+            this.passwordRegistra.TabIndex = 12;
             // 
-            // textBox5
+            // emailRegistra
             // 
-            this.textBox5.Location = new System.Drawing.Point(115, 90);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(100, 20);
-            this.textBox5.TabIndex = 11;
+            this.emailRegistra.Location = new System.Drawing.Point(115, 90);
+            this.emailRegistra.Name = "emailRegistra";
+            this.emailRegistra.Size = new System.Drawing.Size(100, 20);
+            this.emailRegistra.TabIndex = 11;
             // 
-            // textBox4
+            // cognomeRegistra
             // 
-            this.textBox4.Location = new System.Drawing.Point(115, 59);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(100, 20);
-            this.textBox4.TabIndex = 10;
+            this.cognomeRegistra.Location = new System.Drawing.Point(115, 59);
+            this.cognomeRegistra.Name = "cognomeRegistra";
+            this.cognomeRegistra.Size = new System.Drawing.Size(100, 20);
+            this.cognomeRegistra.TabIndex = 10;
             // 
-            // textBox3
+            // nomeRegistra
             // 
-            this.textBox3.Location = new System.Drawing.Point(115, 22);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(100, 20);
-            this.textBox3.TabIndex = 5;
+            this.nomeRegistra.Location = new System.Drawing.Point(115, 22);
+            this.nomeRegistra.Name = "nomeRegistra";
+            this.nomeRegistra.Size = new System.Drawing.Size(100, 20);
+            this.nomeRegistra.TabIndex = 5;
             // 
             // buttonRegister
             // 
@@ -300,27 +300,27 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // radioButton1
+            // radioButtonStudente
             // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Location = new System.Drawing.Point(51, 193);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(85, 17);
-            this.radioButton1.TabIndex = 14;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "radioButton1";
-            this.radioButton1.UseVisualStyleBackColor = true;
+            this.radioButtonStudente.AutoSize = true;
+            this.radioButtonStudente.Location = new System.Drawing.Point(51, 193);
+            this.radioButtonStudente.Name = "radioButtonStudente";
+            this.radioButtonStudente.Size = new System.Drawing.Size(68, 17);
+            this.radioButtonStudente.TabIndex = 14;
+            this.radioButtonStudente.TabStop = true;
+            this.radioButtonStudente.Text = "Studente";
+            this.radioButtonStudente.UseVisualStyleBackColor = true;
             // 
-            // radioButton2
+            // radioButtonProfessore
             // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Location = new System.Drawing.Point(142, 193);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(85, 17);
-            this.radioButton2.TabIndex = 15;
-            this.radioButton2.TabStop = true;
-            this.radioButton2.Text = "radioButton2";
-            this.radioButton2.UseVisualStyleBackColor = true;
+            this.radioButtonProfessore.AutoSize = true;
+            this.radioButtonProfessore.Location = new System.Drawing.Point(142, 193);
+            this.radioButtonProfessore.Name = "radioButtonProfessore";
+            this.radioButtonProfessore.Size = new System.Drawing.Size(75, 17);
+            this.radioButtonProfessore.TabIndex = 15;
+            this.radioButtonProfessore.TabStop = true;
+            this.radioButtonProfessore.Text = "Professore";
+            this.radioButtonProfessore.UseVisualStyleBackColor = true;
             // 
             // Form1
             // 
@@ -364,11 +364,11 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox7;
-        private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox confPasswordRegistra;
+        private System.Windows.Forms.TextBox passwordRegistra;
+        private System.Windows.Forms.TextBox emailRegistra;
+        private System.Windows.Forms.TextBox cognomeRegistra;
+        private System.Windows.Forms.TextBox nomeRegistra;
         private System.Windows.Forms.Button buttonLoginPanel;
         private System.Windows.Forms.Button buttonRegisterPanel;
         private System.Windows.Forms.TextBox textBox8;
@@ -378,8 +378,8 @@
         private System.Windows.Forms.TextBox textBox11;
         private System.Windows.Forms.TextBox textBox12;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.RadioButton radioButton2;
-        private System.Windows.Forms.RadioButton radioButton1;
+        private System.Windows.Forms.RadioButton radioButtonProfessore;
+        private System.Windows.Forms.RadioButton radioButtonStudente;
     }
 }
 

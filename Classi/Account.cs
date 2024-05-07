@@ -4,15 +4,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Progetto_Info
+namespace Classi
 {
-    internal class Account
+    public class Account
     {
         // attributi
         private string _nome;
         private string _cognome;
         private string _email;
         private string _password;
+        private string _ruolo;
 
         // metodi accessor
         public string Nome
@@ -35,14 +36,26 @@ namespace Progetto_Info
             get { return _password; }
             set { _password = value; }
         }
+        public string Ruolo
+        {
+            get { return _ruolo; }
+            set { _ruolo = value; }
+        }
 
-        // costruttore
-        public Account(string _nome, string _cognome, string _email, string _password)
+        // costruttori
+        public Account(){
+            Nome = "";
+            Cognome = "";
+            Email = "";
+            Password = "";
+        }
+        public Account(string _nome, string _cognome, string _email, string _password, string _ruolo)
         {
             Nome = _nome;
             Cognome = _cognome;
             Email = _email;
             Password = _password;
+            Ruolo = _ruolo;
         }
     }
 }
