@@ -41,43 +41,78 @@ namespace Progetto_Info
 
         private void buttonLogin_Click(object sender, EventArgs e)
         {
-            Form2 form2 = new Form2(this);
-            form2.Show();
-            this.Hide();
+
+            List<Account> lista = JsonConvert.DeserializeObject<List<Account>>(File.ReadAllText("file.json"));
+
+            foreach(Account account in lista)
+            {
+                if(account.Email == emailLogin.Text && account.Password == passwordLogin.Text)
+                {
+                    creazioneForm2();
+                    return;
+                }
+
+            }
+            MessageBox.Show("Email o password errati");
+
         }
 
         private void buttonRegister_Click(object sender, EventArgs e)
         {
             string json = "";
-            Form2 form2 = new Form2(this);
-            form2.Show();
-            this.Hide();
             
             List<Account> account = new List<Account>();
-            account.Nome = nomeRegistra.Text;
-            account.Cognome = cognomeRegistra.Text;
-            account.Email = emailRegistra.Text; 
-            account.Password = passwordRegistra.Text;
+            Account nuovoAccount = new Account();
+            nuovoAccount.Nome = nomeRegistra.Text;
+            nuovoAccount.Cognome = cognomeRegistra.Text;
+            nuovoAccount.Email = emailRegistra.Text; 
+            nuovoAccount.Password = passwordRegistra.Text;
+
+            if (passwordRegistra.Text != confPasswordRegistra.Text)
+            {
+                MessageBox.Show("Le due password non corrispondono");
+                return;
+            }
+            
             bool isChecked = radioButtonStudente.Checked;
             if(isChecked)
-                account.Ruolo = radioButtonStudente.Text;
+                nuovoAccount.Ruolo = radioButtonStudente.Text;
             else
-                account.Ruolo = radioButtonProfessore.Text;
+                nuovoAccount.Ruolo = radioButtonProfessore.Text;
 
+
+            account.Add(nuovoAccount);
             if (!File.Exists(nomeFile))
             {
                 json = JsonConvert.SerializeObject(account, Formatting.Indented);
                 File.WriteAllText(nomeFile, json);
+                creazioneForm2();
                 return;
             }
 
             List<Account> lista = JsonConvert.DeserializeObject<List<Account>>(File.ReadAllText("file.json"));
-            lista.Add(account);
-            json = JsonConvert.SerializeObject(lista);
+
+            foreach(Account controllo in lista)
+            {
+                if(controllo.Email == nuovoAccount.Email)
+                {
+                    MessageBox.Show("Email già in uso");
+                    return;
+                }
+            }
+            lista.AddRange(account);
+            json = JsonConvert.SerializeObject(lista, Formatting.Indented);
             File.WriteAllText(nomeFile, json);
 
+            creazioneForm2();
         }
 
+        private void creazioneForm2()
+        {
+            Form2 form2 = new Form2(this);
+            form2.Show();
+            this.Hide();
+        }
         private void button1_Click(object sender, EventArgs e)
         {
             try
