@@ -12,12 +12,14 @@ using System.Net.Mail;
 using Classi;
 using Newtonsoft.Json;
 using System.IO;
+using System.Security.Principal;
 
 namespace Progetto_Info
 {
     public partial class Form2 : Form
     {
         private Form1 form1;
+       public Account utenteAttuale => form1.utenteAttuale;
         public Form2(Form1 _form1)
         {
             InitializeComponent();
@@ -27,7 +29,23 @@ namespace Progetto_Info
 
         private void Form2_Load(object sender, EventArgs e)
         {
+            List<Account> lista = JsonConvert.DeserializeObject<List<Account>>(File.ReadAllText(form1.nomeFile));
 
+            for (int i = 0; i < lista.Count; i++)
+            {
+                if (lista[i].Email == utenteAttuale.Email)
+                {
+                    for(int j = 0; j < form1.utenteAttuale.Corsi.Count; j++)
+                    {
+                        GroupBox corso = new GroupBox();
+                        corso.Text = utenteAttuale.Corsi[j];
+                        corso.Width = 250;
+                        corso.Height = 150;
+                        flowLayoutPanelCorsi.Controls.Add(corso);
+                    }
+                    break;
+                }
+            }
         }
 
         private void Form2_FormClosed(object sender, FormClosedEventArgs e)
@@ -55,8 +73,8 @@ namespace Progetto_Info
                 groupBox1.Hide();
                 flowLayoutPanelCorsi.BringToFront();
 
-                form1.utenteAttuale.Corsi.Add(corsoNome);
-                SalvaDatiCorso(form1.utenteAttuale);
+                utenteAttuale.Corsi.Add(corsoNome);
+                SalvaDatiCorso(utenteAttuale);
             }
             else
             {
