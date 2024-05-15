@@ -14,6 +14,7 @@ namespace Classi
         private string _email;
         private string _password;
         private string _ruolo;
+        private List<string> _corsi;
 
         // metodi accessor
         public string Nome
@@ -41,6 +42,11 @@ namespace Classi
             get { return _ruolo; }
             set { _ruolo = value; }
         }
+        public List<string> Corsi
+        {
+            get { return _corsi; }
+            set { _corsi = value; }
+        }
 
         // costruttori
         public Account(){
@@ -48,6 +54,7 @@ namespace Classi
             Cognome = "";
             Email = "";
             Password = "";
+            Corsi = new List<string>();        
         }
         public Account(string _nome, string _cognome, string _email, string _password, string _ruolo)
         {
@@ -56,6 +63,7 @@ namespace Classi
             Email = _email;
             Password = _password;
             Ruolo = _ruolo;
+            Corsi = new List<string>();
         }
     }
 }

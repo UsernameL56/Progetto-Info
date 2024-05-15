@@ -9,6 +9,9 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Net;
 using System.Net.Mail;
+using Classi;
+using Newtonsoft.Json;
+using System.IO;
 
 namespace Progetto_Info
 {
@@ -40,13 +43,42 @@ namespace Progetto_Info
 
         private void buttonCreaCorso_Click(object sender, EventArgs e)
         {
-            GroupBox groupBox = new GroupBox();
-            groupBox.Text = textBox1.Text;
-            groupBox.Width = 250;
-            groupBox.Height = 150;
-            flowLayoutPanelCorsi.Controls.Add(groupBox);
-            groupBox1.Hide();
-            flowLayoutPanelCorsi.BringToFront();
+            string corsoNome = nomeCorso.Text;
+
+            if (!string.IsNullOrEmpty(corsoNome))
+            {
+                GroupBox corso = new GroupBox();
+                corso.Text = corsoNome;
+                corso.Width = 250;
+                corso.Height = 150;
+                flowLayoutPanelCorsi.Controls.Add(corso);
+                groupBox1.Hide();
+                flowLayoutPanelCorsi.BringToFront();
+
+                form1.utenteAttuale.Corsi.Add(corsoNome);
+                SalvaDatiCorso(form1.utenteAttuale);
+            }
+            else
+            {
+                MessageBox.Show("Inserisci il nome del corso.");
+            }
+        }
+
+        private void SalvaDatiCorso(Account account)
+        {
+            List<Account> lista = JsonConvert.DeserializeObject<List<Account>>(File.ReadAllText(form1.nomeFile));
+
+            for(int i = 0; i < lista.Count; i++)
+            {
+                if(lista[i].Email == account.Email)
+                {
+                    lista[i] = account;
+                    break;
+                }
+            }
+
+            string json = JsonConvert.SerializeObject(lista, Formatting.Indented);
+            File.WriteAllText(form1.nomeFile, json);
         }
     }
 }

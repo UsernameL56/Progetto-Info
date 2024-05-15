@@ -16,11 +16,11 @@ namespace Progetto_Info
 {
     public partial class Form1 : Form
     {
-        string nomeFile;
+        public string nomeFile;
+        public Account utenteAttuale { get; set; }
         public Form1()
         {
             InitializeComponent();
-            textBox9.PasswordChar = '*';
             nomeFile = "file.json";
         }
 
@@ -48,6 +48,7 @@ namespace Progetto_Info
             {
                 if(account.Email == emailLogin.Text && account.Password == passwordLogin.Text)
                 {
+                    utenteAttuale = account;
                     creazioneForm2();
                     return;
                 }
@@ -86,6 +87,7 @@ namespace Progetto_Info
             {
                 json = JsonConvert.SerializeObject(account, Formatting.Indented);
                 File.WriteAllText(nomeFile, json);
+                utenteAttuale = nuovoAccount;
                 creazioneForm2();
                 return;
             }
@@ -104,6 +106,7 @@ namespace Progetto_Info
             json = JsonConvert.SerializeObject(lista, Formatting.Indented);
             File.WriteAllText(nomeFile, json);
 
+            utenteAttuale = nuovoAccount;
             creazioneForm2();
         }
 
