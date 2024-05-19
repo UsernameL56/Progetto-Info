@@ -42,6 +42,13 @@ namespace Progetto_Info
                         corso.Width = 250;
                         corso.Height = 150;
                         flowLayoutPanelCorsi.Controls.Add(corso);
+                        corso.Click += (s, eArgs) =>
+                        {
+                            
+                            Form3 form3 = new Form3(this);
+                            form3.Show();
+                            this.Hide();
+                        };
                     }
                     break;
                 }
@@ -75,6 +82,14 @@ namespace Progetto_Info
 
                 utenteAttuale.Corsi.Add(corsoNome);
                 SalvaDatiCorso(utenteAttuale);
+
+                corso.Click += (s, eArgs) =>
+                {
+                    
+                    Form3 form3 = new Form3(this);
+                    form3.Show();
+                    this.Hide();
+                };
             }
             else
             {
