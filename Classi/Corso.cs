@@ -3,10 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Newtonsoft.Json;
 
 namespace Classi
 {
-    internal class Corso
+    public class Corso
     {
         // attributi
         public string _id;

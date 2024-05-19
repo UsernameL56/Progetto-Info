@@ -19,35 +19,35 @@ namespace Progetto_Info
     public partial class Form2 : Form
     {
         private Form1 form1;
+        public string nomeFile;
        public Account utenteAttuale => form1.utenteAttuale;
         public Form2(Form1 _form1)
         {
             InitializeComponent();
             form1 = _form1;
-
+            nomeFile = form1.nomeFile;
         }
 
         private void Form2_Load(object sender, EventArgs e)
         {
-            List<Account> lista = JsonConvert.DeserializeObject<List<Account>>(File.ReadAllText(form1.nomeFile));
+            List<Account> lista = JsonConvert.DeserializeObject<List<Account>>(File.ReadAllText(nomeFile));
 
             for (int i = 0; i < lista.Count; i++)
             {
                 if (lista[i].Email == utenteAttuale.Email)
                 {
-                    for(int j = 0; j < form1.utenteAttuale.Corsi.Count; j++)
+                    foreach(Corso nuovoCorso in utenteAttuale.Corsi)
                     {
                         GroupBox corso = new GroupBox();
-                        corso.Text = utenteAttuale.Corsi[j];
+                        corso.Text = nuovoCorso.Nome;
                         corso.Width = 250;
                         corso.Height = 150;
                         flowLayoutPanelCorsi.Controls.Add(corso);
                         corso.Click += (s, eArgs) =>
                         {
-                            
-                            Form3 form3 = new Form3(this);
-                            form3.Show();
                             this.Hide();
+                            Form3 form3 = new Form3(this, nuovoCorso.Id);
+                            form3.Show();
                         };
                     }
                     break;
@@ -72,6 +72,11 @@ namespace Progetto_Info
 
             if (!string.IsNullOrEmpty(corsoNome))
             {
+                Corso nuovoCorso = new Corso(corsoNome);
+                utenteAttuale.Corsi.Add(nuovoCorso);
+                SalvaDati(utenteAttuale);
+
+
                 GroupBox corso = new GroupBox();
                 corso.Text = corsoNome;
                 corso.Width = 250;
@@ -80,15 +85,11 @@ namespace Progetto_Info
                 groupBox1.Hide();
                 flowLayoutPanelCorsi.BringToFront();
 
-                utenteAttuale.Corsi.Add(corsoNome);
-                SalvaDatiCorso(utenteAttuale);
-
                 corso.Click += (s, eArgs) =>
                 {
-                    
-                    Form3 form3 = new Form3(this);
-                    form3.Show();
                     this.Hide();
+                    Form3 form3 = new Form3(this, nuovoCorso.Id);
+                    form3.Show();
                 };
             }
             else
@@ -97,9 +98,9 @@ namespace Progetto_Info
             }
         }
 
-        private void SalvaDatiCorso(Account account)
+        private void SalvaDati(Account account)
         {
-            List<Account> lista = JsonConvert.DeserializeObject<List<Account>>(File.ReadAllText(form1.nomeFile));
+            List<Account> lista = JsonConvert.DeserializeObject<List<Account>>(File.ReadAllText(nomeFile));
 
             for(int i = 0; i < lista.Count; i++)
             {
@@ -111,7 +112,7 @@ namespace Progetto_Info
             }
 
             string json = JsonConvert.SerializeObject(lista, Formatting.Indented);
-            File.WriteAllText(form1.nomeFile, json);
+            File.WriteAllText(nomeFile, json);
         }
     }
 }

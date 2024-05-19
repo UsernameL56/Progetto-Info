@@ -51,13 +51,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.buttonLoginPanel = new System.Windows.Forms.Button();
             this.buttonRegisterPanel = new System.Windows.Forms.Button();
-            this.textBox8 = new System.Windows.Forms.TextBox();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.textBox9 = new System.Windows.Forms.TextBox();
-            this.textBox10 = new System.Windows.Forms.TextBox();
-            this.textBox11 = new System.Windows.Forms.TextBox();
-            this.textBox12 = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
             this.panelLogin.SuspendLayout();
             this.panelRegister.SuspendLayout();
             this.SuspendLayout();
@@ -70,31 +64,35 @@
             this.panelLogin.Controls.Add(this.buttonLogin);
             this.panelLogin.Controls.Add(this.label2);
             this.panelLogin.Controls.Add(this.label1);
-            this.panelLogin.Location = new System.Drawing.Point(155, 82);
+            this.panelLogin.Location = new System.Drawing.Point(5, 67);
+            this.panelLogin.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panelLogin.Name = "panelLogin";
-            this.panelLogin.Size = new System.Drawing.Size(278, 288);
+            this.panelLogin.Size = new System.Drawing.Size(371, 354);
             this.panelLogin.TabIndex = 0;
             // 
             // passwordLogin
             // 
-            this.passwordLogin.Location = new System.Drawing.Point(109, 90);
+            this.passwordLogin.Location = new System.Drawing.Point(145, 111);
+            this.passwordLogin.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.passwordLogin.Name = "passwordLogin";
-            this.passwordLogin.Size = new System.Drawing.Size(100, 20);
+            this.passwordLogin.Size = new System.Drawing.Size(132, 22);
             this.passwordLogin.TabIndex = 4;
             this.passwordLogin.UseSystemPasswordChar = true;
             // 
             // emailLogin
             // 
-            this.emailLogin.Location = new System.Drawing.Point(110, 48);
+            this.emailLogin.Location = new System.Drawing.Point(147, 59);
+            this.emailLogin.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.emailLogin.Name = "emailLogin";
-            this.emailLogin.Size = new System.Drawing.Size(100, 20);
+            this.emailLogin.Size = new System.Drawing.Size(132, 22);
             this.emailLogin.TabIndex = 3;
             // 
             // buttonLogin
             // 
-            this.buttonLogin.Location = new System.Drawing.Point(64, 230);
+            this.buttonLogin.Location = new System.Drawing.Point(85, 283);
+            this.buttonLogin.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.buttonLogin.Name = "buttonLogin";
-            this.buttonLogin.Size = new System.Drawing.Size(155, 35);
+            this.buttonLogin.Size = new System.Drawing.Size(207, 43);
             this.buttonLogin.TabIndex = 2;
             this.buttonLogin.Text = "Login";
             this.buttonLogin.UseVisualStyleBackColor = true;
@@ -103,18 +101,20 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(51, 90);
+            this.label2.Location = new System.Drawing.Point(68, 111);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(52, 13);
+            this.label2.Size = new System.Drawing.Size(66, 16);
             this.label2.TabIndex = 1;
             this.label2.Text = "password";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(72, 51);
+            this.label1.Location = new System.Drawing.Point(96, 63);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(31, 13);
+            this.label1.Size = new System.Drawing.Size(40, 16);
             this.label1.TabIndex = 0;
             this.label1.Text = "email";
             // 
@@ -134,17 +134,19 @@
             this.panelRegister.Controls.Add(this.label5);
             this.panelRegister.Controls.Add(this.label4);
             this.panelRegister.Controls.Add(this.label3);
-            this.panelRegister.Location = new System.Drawing.Point(154, 82);
+            this.panelRegister.Location = new System.Drawing.Point(3, 67);
+            this.panelRegister.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panelRegister.Name = "panelRegister";
-            this.panelRegister.Size = new System.Drawing.Size(278, 288);
+            this.panelRegister.Size = new System.Drawing.Size(371, 354);
             this.panelRegister.TabIndex = 1;
             // 
             // radioButtonProfessore
             // 
             this.radioButtonProfessore.AutoSize = true;
-            this.radioButtonProfessore.Location = new System.Drawing.Point(142, 193);
+            this.radioButtonProfessore.Location = new System.Drawing.Point(189, 238);
+            this.radioButtonProfessore.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.radioButtonProfessore.Name = "radioButtonProfessore";
-            this.radioButtonProfessore.Size = new System.Drawing.Size(75, 17);
+            this.radioButtonProfessore.Size = new System.Drawing.Size(94, 20);
             this.radioButtonProfessore.TabIndex = 15;
             this.radioButtonProfessore.TabStop = true;
             this.radioButtonProfessore.Text = "Professore";
@@ -153,9 +155,10 @@
             // radioButtonStudente
             // 
             this.radioButtonStudente.AutoSize = true;
-            this.radioButtonStudente.Location = new System.Drawing.Point(51, 193);
+            this.radioButtonStudente.Location = new System.Drawing.Point(68, 238);
+            this.radioButtonStudente.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.radioButtonStudente.Name = "radioButtonStudente";
-            this.radioButtonStudente.Size = new System.Drawing.Size(68, 17);
+            this.radioButtonStudente.Size = new System.Drawing.Size(81, 20);
             this.radioButtonStudente.TabIndex = 14;
             this.radioButtonStudente.TabStop = true;
             this.radioButtonStudente.Text = "Studente";
@@ -163,44 +166,50 @@
             // 
             // confPasswordRegistra
             // 
-            this.confPasswordRegistra.Location = new System.Drawing.Point(115, 153);
+            this.confPasswordRegistra.Location = new System.Drawing.Point(153, 188);
+            this.confPasswordRegistra.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.confPasswordRegistra.Name = "confPasswordRegistra";
-            this.confPasswordRegistra.Size = new System.Drawing.Size(100, 20);
+            this.confPasswordRegistra.Size = new System.Drawing.Size(132, 22);
             this.confPasswordRegistra.TabIndex = 13;
             // 
             // passwordRegistra
             // 
-            this.passwordRegistra.Location = new System.Drawing.Point(115, 124);
+            this.passwordRegistra.Location = new System.Drawing.Point(153, 153);
+            this.passwordRegistra.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.passwordRegistra.Name = "passwordRegistra";
-            this.passwordRegistra.Size = new System.Drawing.Size(100, 20);
+            this.passwordRegistra.Size = new System.Drawing.Size(132, 22);
             this.passwordRegistra.TabIndex = 12;
             // 
             // emailRegistra
             // 
-            this.emailRegistra.Location = new System.Drawing.Point(115, 90);
+            this.emailRegistra.Location = new System.Drawing.Point(153, 111);
+            this.emailRegistra.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.emailRegistra.Name = "emailRegistra";
-            this.emailRegistra.Size = new System.Drawing.Size(100, 20);
+            this.emailRegistra.Size = new System.Drawing.Size(132, 22);
             this.emailRegistra.TabIndex = 11;
             // 
             // cognomeRegistra
             // 
-            this.cognomeRegistra.Location = new System.Drawing.Point(115, 59);
+            this.cognomeRegistra.Location = new System.Drawing.Point(153, 73);
+            this.cognomeRegistra.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.cognomeRegistra.Name = "cognomeRegistra";
-            this.cognomeRegistra.Size = new System.Drawing.Size(100, 20);
+            this.cognomeRegistra.Size = new System.Drawing.Size(132, 22);
             this.cognomeRegistra.TabIndex = 10;
             // 
             // nomeRegistra
             // 
-            this.nomeRegistra.Location = new System.Drawing.Point(115, 22);
+            this.nomeRegistra.Location = new System.Drawing.Point(153, 27);
+            this.nomeRegistra.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.nomeRegistra.Name = "nomeRegistra";
-            this.nomeRegistra.Size = new System.Drawing.Size(100, 20);
+            this.nomeRegistra.Size = new System.Drawing.Size(132, 22);
             this.nomeRegistra.TabIndex = 5;
             // 
             // buttonRegister
             // 
-            this.buttonRegister.Location = new System.Drawing.Point(64, 239);
+            this.buttonRegister.Location = new System.Drawing.Point(85, 294);
+            this.buttonRegister.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.buttonRegister.Name = "buttonRegister";
-            this.buttonRegister.Size = new System.Drawing.Size(155, 35);
+            this.buttonRegister.Size = new System.Drawing.Size(207, 43);
             this.buttonRegister.TabIndex = 5;
             this.buttonRegister.Text = "Register";
             this.buttonRegister.UseVisualStyleBackColor = true;
@@ -209,53 +218,59 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(13, 153);
+            this.label7.Location = new System.Drawing.Point(17, 188);
+            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(91, 13);
+            this.label7.Size = new System.Drawing.Size(115, 16);
             this.label7.TabIndex = 9;
             this.label7.Text = "Confirm Password";
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(52, 124);
+            this.label6.Location = new System.Drawing.Point(69, 153);
+            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(53, 13);
+            this.label6.Size = new System.Drawing.Size(67, 16);
             this.label6.TabIndex = 8;
             this.label6.Text = "Password";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(52, 90);
+            this.label5.Location = new System.Drawing.Point(69, 111);
+            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(32, 13);
+            this.label5.Size = new System.Drawing.Size(41, 16);
             this.label5.TabIndex = 7;
             this.label5.Text = "Email";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(52, 59);
+            this.label4.Location = new System.Drawing.Point(69, 73);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(52, 13);
+            this.label4.Size = new System.Drawing.Size(66, 16);
             this.label4.TabIndex = 6;
             this.label4.Text = "Cognome";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(52, 26);
+            this.label3.Location = new System.Drawing.Point(69, 32);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(35, 13);
+            this.label3.Size = new System.Drawing.Size(44, 16);
             this.label3.TabIndex = 5;
             this.label3.Text = "Nome";
             // 
             // buttonLoginPanel
             // 
-            this.buttonLoginPanel.Location = new System.Drawing.Point(154, 31);
+            this.buttonLoginPanel.Location = new System.Drawing.Point(3, 4);
+            this.buttonLoginPanel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.buttonLoginPanel.Name = "buttonLoginPanel";
-            this.buttonLoginPanel.Size = new System.Drawing.Size(136, 45);
+            this.buttonLoginPanel.Size = new System.Drawing.Size(181, 55);
             this.buttonLoginPanel.TabIndex = 2;
             this.buttonLoginPanel.Text = "Login";
             this.buttonLoginPanel.UseVisualStyleBackColor = true;
@@ -263,80 +278,32 @@
             // 
             // buttonRegisterPanel
             // 
-            this.buttonRegisterPanel.Location = new System.Drawing.Point(296, 31);
+            this.buttonRegisterPanel.Location = new System.Drawing.Point(193, 4);
+            this.buttonRegisterPanel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.buttonRegisterPanel.Name = "buttonRegisterPanel";
-            this.buttonRegisterPanel.Size = new System.Drawing.Size(136, 45);
+            this.buttonRegisterPanel.Size = new System.Drawing.Size(181, 55);
             this.buttonRegisterPanel.TabIndex = 3;
             this.buttonRegisterPanel.Text = "Register";
             this.buttonRegisterPanel.UseVisualStyleBackColor = true;
             this.buttonRegisterPanel.Click += new System.EventHandler(this.buttonRegisterPanel_Click);
             // 
-            // textBox8
-            // 
-            this.textBox8.Location = new System.Drawing.Point(500, 82);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(100, 20);
-            this.textBox8.TabIndex = 4;
-            // 
             // contextMenuStrip1
             // 
+            this.contextMenuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.contextMenuStrip1.Name = "contextMenuStrip1";
             this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
             // 
-            // textBox9
-            // 
-            this.textBox9.Location = new System.Drawing.Point(606, 82);
-            this.textBox9.Name = "textBox9";
-            this.textBox9.Size = new System.Drawing.Size(100, 20);
-            this.textBox9.TabIndex = 6;
-            // 
-            // textBox10
-            // 
-            this.textBox10.Location = new System.Drawing.Point(500, 126);
-            this.textBox10.Name = "textBox10";
-            this.textBox10.Size = new System.Drawing.Size(100, 20);
-            this.textBox10.TabIndex = 7;
-            // 
-            // textBox11
-            // 
-            this.textBox11.Location = new System.Drawing.Point(500, 166);
-            this.textBox11.Name = "textBox11";
-            this.textBox11.Size = new System.Drawing.Size(100, 20);
-            this.textBox11.TabIndex = 8;
-            // 
-            // textBox12
-            // 
-            this.textBox12.Location = new System.Drawing.Point(528, 231);
-            this.textBox12.Multiline = true;
-            this.textBox12.Name = "textBox12";
-            this.textBox12.Size = new System.Drawing.Size(152, 73);
-            this.textBox12.TabIndex = 9;
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(606, 108);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(100, 78);
-            this.button1.TabIndex = 14;
-            this.button1.Text = "send";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(740, 507);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.textBox12);
-            this.Controls.Add(this.textBox11);
-            this.Controls.Add(this.textBox10);
-            this.Controls.Add(this.textBox9);
-            this.Controls.Add(this.textBox8);
+            this.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.ClientSize = new System.Drawing.Size(377, 423);
             this.Controls.Add(this.buttonRegisterPanel);
             this.Controls.Add(this.buttonLoginPanel);
             this.Controls.Add(this.panelLogin);
             this.Controls.Add(this.panelRegister);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "Form1";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
@@ -345,7 +312,6 @@
             this.panelRegister.ResumeLayout(false);
             this.panelRegister.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -371,13 +337,7 @@
         private System.Windows.Forms.TextBox nomeRegistra;
         private System.Windows.Forms.Button buttonLoginPanel;
         private System.Windows.Forms.Button buttonRegisterPanel;
-        private System.Windows.Forms.TextBox textBox8;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
-        private System.Windows.Forms.TextBox textBox9;
-        private System.Windows.Forms.TextBox textBox10;
-        private System.Windows.Forms.TextBox textBox11;
-        private System.Windows.Forms.TextBox textBox12;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.RadioButton radioButtonProfessore;
         private System.Windows.Forms.RadioButton radioButtonStudente;
     }

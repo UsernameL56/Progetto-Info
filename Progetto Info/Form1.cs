@@ -116,26 +116,5 @@ namespace Progetto_Info
             form2.Show();
             this.Hide();
         }
-        private void button1_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                MailMessage mm = new MailMessage();
-                SmtpClient sc = new SmtpClient("smtp.gmail.com");
-                mm.From = new MailAddress(textBox8.Text);
-                mm.To.Add(textBox10.Text);
-                mm.Subject = textBox11.Text;
-                mm.Body = textBox12.Text;
-                sc.Port = 587;
-                sc.Credentials = new System.Net.NetworkCredential(textBox8.Text, textBox9.Text);
-                sc.EnableSsl = true;
-                sc.Send(mm);
-                MessageBox.Show("Email has sent.");
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-        }
     }
 }
