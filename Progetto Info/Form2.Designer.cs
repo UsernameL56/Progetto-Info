@@ -39,6 +39,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
+            this.BackToButton = new Classi.RoundButton();
             this.panel3.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -66,7 +67,7 @@
             // 
             // temp
             // 
-            this.temp.Location = new System.Drawing.Point(1164, 11);
+            this.temp.Location = new System.Drawing.Point(1073, 11);
             this.temp.Margin = new System.Windows.Forms.Padding(4);
             this.temp.Name = "temp";
             this.temp.Size = new System.Drawing.Size(178, 57);
@@ -78,6 +79,7 @@
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.Indigo;
+            this.panel3.Controls.Add(this.BackToButton);
             this.panel3.Controls.Add(this.temp);
             this.panel3.Controls.Add(this.label1);
             this.panel3.Location = new System.Drawing.Point(3, 2);
@@ -176,6 +178,17 @@
             this.label3.TabIndex = 0;
             this.label3.Text = "Tipologia";
             // 
+            // BackToButton
+            // 
+            this.BackToButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 22.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BackToButton.Location = new System.Drawing.Point(1279, 7);
+            this.BackToButton.Name = "BackToButton";
+            this.BackToButton.Size = new System.Drawing.Size(65, 65);
+            this.BackToButton.TabIndex = 4;
+            this.BackToButton.Text = "L";
+            this.BackToButton.UseVisualStyleBackColor = true;
+            this.BackToButton.Click += new System.EventHandler(this.BackToButton_Click);
+            // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -212,5 +225,6 @@
         private System.Windows.Forms.Button buttonCreaCorso;
         private System.Windows.Forms.TextBox nomeCorso;
         private System.Windows.Forms.Label label4;
+        private Classi.RoundButton BackToButton;
     }
 }

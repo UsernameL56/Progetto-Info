@@ -20,12 +20,14 @@ namespace Progetto_Info
     {
         private Form1 form1;
         public string nomeFile;
+        bool chiusuraForm;
        public Account utenteAttuale => form1.utenteAttuale;
         public Form2(Form1 _form1)
         {
             InitializeComponent();
             form1 = _form1;
             nomeFile = form1.nomeFile;
+            chiusuraForm = true;
         }
 
         private void Form2_Load(object sender, EventArgs e)
@@ -36,7 +38,8 @@ namespace Progetto_Info
             {
                 if (lista[i].Email == utenteAttuale.Email)
                 {
-                    foreach(Corso nuovoCorso in utenteAttuale.Corsi)
+                    BackToButton.Text = utenteAttuale.Nome.Substring(0, 1);
+                    foreach (Corso nuovoCorso in utenteAttuale.Corsi)
                     {
                         GroupBox corso = new GroupBox();
                         corso.Text = nuovoCorso.Nome;
@@ -57,7 +60,15 @@ namespace Progetto_Info
 
         private void Form2_FormClosed(object sender, FormClosedEventArgs e)
         {
-            form1.Close();
+            if (chiusuraForm)
+            {
+                form1.Close();
+            }
+            else
+            {
+                chiusuraForm = true;
+            }
+            
         }
 
         private void temp_Click(object sender, EventArgs e)
@@ -113,6 +124,13 @@ namespace Progetto_Info
 
             string json = JsonConvert.SerializeObject(lista, Formatting.Indented);
             File.WriteAllText(nomeFile, json);
+        }
+
+        private void BackToButton_Click(object sender, EventArgs e)
+        {
+            chiusuraForm = false;
+            this.Close();
+            form1.Show();
         }
     }
 }
