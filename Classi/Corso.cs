@@ -10,9 +10,9 @@ namespace Classi
     public class Corso
     {
         // attributi
-        public string _id;
-        public string _nome;
-        public List<string> _materiali;
+        private string _id;
+        private string _nome;
+        private List<string> _materiali;
 
         // metodi accessor
         public string Id
