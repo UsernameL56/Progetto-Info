@@ -61,10 +61,10 @@ namespace Progetto_Info
                     Corso corso = form2.utenteAttuale.Corsi.FirstOrDefault(c => c.Id == corsoID);
                     if (corso != null)
                     {
-                        corso.Materiali.Insert(0, pathFile); // Aggiungi il file in cima
+                        corso.Materiali.Insert(0, pathFile); 
                         SalvaDati(form2.utenteAttuale);
 
-                        // Aggiungi il GroupBox per il file caricato
+                       
                         AggiungiFile(pathFile);
                     }
                 }
