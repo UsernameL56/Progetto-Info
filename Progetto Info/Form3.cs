@@ -19,6 +19,7 @@ namespace Progetto_Info
         private string corsoID;
         string nomeFile;
         public Account utenteAttuale => form2.utenteAttuale;
+        private Corso corsoCorrente;
         public Form3(Form2 _form2, string _corsoID)
         {
             InitializeComponent();
@@ -92,7 +93,7 @@ namespace Progetto_Info
         {
             GroupBox groupBoxFile = new GroupBox();
             groupBoxFile.Text = System.IO.Path.GetFileName(pathFile);
-            groupBoxFile.Width = 860;
+            groupBoxFile.Width = 650;
             groupBoxFile.Height = 70;
 
             Button buttonVisualizza = new Button();
@@ -134,6 +135,19 @@ namespace Progetto_Info
                             return;
                         }
                     }
+                }
+            }
+        }
+
+        private void RicaricaButton_Click(object sender, EventArgs e)
+        {
+            if(utenteAttuale.Ruolo == "Studente")
+            {
+                List<Account> lista = JsonConvert.DeserializeObject<List<Account>>(File.ReadAllText(nomeFile));
+
+                for(int i = 0; i < lista.Count; i++)
+                {
+
                 }
             }
         }
