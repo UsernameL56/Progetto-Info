@@ -93,7 +93,7 @@ namespace Progetto_Info
 
                 if (!string.IsNullOrEmpty(corsoNome))
                 {
-                    Corso nuovoCorso = new Corso(corsoNome);
+                    Corso nuovoCorso = new Corso(corsoNome, utenteAttuale.Cognome);
                     utenteAttuale.Corsi.Add(nuovoCorso);
                     SalvaDati(utenteAttuale);
 

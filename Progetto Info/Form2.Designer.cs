@@ -58,7 +58,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Swis721 BlkCn BT", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label1.Location = new System.Drawing.Point(84, 20);
+            this.label1.Location = new System.Drawing.Point(87, 23);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(104, 36);
@@ -67,7 +67,7 @@
             // 
             // temp
             // 
-            this.temp.Location = new System.Drawing.Point(1073, 11);
+            this.temp.Location = new System.Drawing.Point(1076, 14);
             this.temp.Margin = new System.Windows.Forms.Padding(4);
             this.temp.Name = "temp";
             this.temp.Size = new System.Drawing.Size(178, 57);
@@ -82,10 +82,10 @@
             this.panel3.Controls.Add(this.BackToButton);
             this.panel3.Controls.Add(this.temp);
             this.panel3.Controls.Add(this.label1);
-            this.panel3.Location = new System.Drawing.Point(3, 2);
+            this.panel3.Location = new System.Drawing.Point(-5, -3);
             this.panel3.Margin = new System.Windows.Forms.Padding(4);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1464, 79);
+            this.panel3.Size = new System.Drawing.Size(1373, 84);
             this.panel3.TabIndex = 2;
             // 
             // flowLayoutPanelCorsi
@@ -181,7 +181,7 @@
             // BackToButton
             // 
             this.BackToButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 22.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BackToButton.Location = new System.Drawing.Point(1279, 7);
+            this.BackToButton.Location = new System.Drawing.Point(1282, 10);
             this.BackToButton.Name = "BackToButton";
             this.BackToButton.Size = new System.Drawing.Size(65, 65);
             this.BackToButton.TabIndex = 4;

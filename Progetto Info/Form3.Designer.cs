@@ -39,29 +39,29 @@
             // 
             // panel1
             // 
+            this.panel1.BackColor = System.Drawing.Color.Indigo;
             this.panel1.Controls.Add(this.label1);
-            this.panel1.Location = new System.Drawing.Point(3, 2);
+            this.panel1.Location = new System.Drawing.Point(-5, -13);
             this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(871, 120);
+            this.panel1.Size = new System.Drawing.Size(1378, 130);
             this.panel1.TabIndex = 0;
             // 
             // flowLayoutPanel1
             // 
             this.flowLayoutPanel1.AutoScroll = true;
-            this.flowLayoutPanel1.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(3, 178);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(216, 191);
             this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(871, 329);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(951, 449);
             this.flowLayoutPanel1.TabIndex = 1;
             // 
             // aggiungiElemento
             // 
-            this.aggiungiElemento.Location = new System.Drawing.Point(3, 131);
+            this.aggiungiElemento.Location = new System.Drawing.Point(252, 139);
             this.aggiungiElemento.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.aggiungiElemento.Name = "aggiungiElemento";
-            this.aggiungiElemento.Size = new System.Drawing.Size(305, 39);
+            this.aggiungiElemento.Size = new System.Drawing.Size(436, 39);
             this.aggiungiElemento.TabIndex = 0;
             this.aggiungiElemento.Text = "Aggiungi File";
             this.aggiungiElemento.UseVisualStyleBackColor = true;
@@ -71,7 +71,8 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Swis721 Blk BT", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(271, 14);
+            this.label1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label1.Location = new System.Drawing.Point(537, 22);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(353, 96);
             this.label1.TabIndex = 0;
@@ -79,17 +80,17 @@
             // 
             // VisualizzaPartecipantiButton
             // 
-            this.VisualizzaPartecipantiButton.Location = new System.Drawing.Point(314, 131);
+            this.VisualizzaPartecipantiButton.Location = new System.Drawing.Point(687, 139);
             this.VisualizzaPartecipantiButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.VisualizzaPartecipantiButton.Name = "VisualizzaPartecipantiButton";
-            this.VisualizzaPartecipantiButton.Size = new System.Drawing.Size(305, 39);
+            this.VisualizzaPartecipantiButton.Size = new System.Drawing.Size(436, 39);
             this.VisualizzaPartecipantiButton.TabIndex = 2;
             this.VisualizzaPartecipantiButton.Text = "Visualizza Partecipanti";
             this.VisualizzaPartecipantiButton.UseVisualStyleBackColor = true;
             // 
             // RicaricaButton
             // 
-            this.RicaricaButton.Location = new System.Drawing.Point(713, 131);
+            this.RicaricaButton.Location = new System.Drawing.Point(1197, 139);
             this.RicaricaButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.RicaricaButton.Name = "RicaricaButton";
             this.RicaricaButton.Size = new System.Drawing.Size(150, 39);
@@ -102,9 +103,9 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(875, 500);
-            this.Controls.Add(this.RicaricaButton);
+            this.ClientSize = new System.Drawing.Size(1359, 642);
             this.Controls.Add(this.VisualizzaPartecipantiButton);
+            this.Controls.Add(this.RicaricaButton);
             this.Controls.Add(this.aggiungiElemento);
             this.Controls.Add(this.flowLayoutPanel1);
             this.Controls.Add(this.panel1);

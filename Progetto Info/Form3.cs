@@ -93,7 +93,7 @@ namespace Progetto_Info
         {
             GroupBox groupBoxFile = new GroupBox();
             groupBoxFile.Text = System.IO.Path.GetFileName(pathFile);
-            groupBoxFile.Width = 650;
+            groupBoxFile.Width = 645;
             groupBoxFile.Height = 70;
 
             Button buttonVisualizza = new Button();
@@ -144,11 +144,28 @@ namespace Progetto_Info
             if(utenteAttuale.Ruolo == "Studente")
             {
                 List<Account> lista = JsonConvert.DeserializeObject<List<Account>>(File.ReadAllText(nomeFile));
-
-                for(int i = 0; i < lista.Count; i++)
+                
+                foreach(Corso corso in utenteAttuale.Corsi)
                 {
-
+                    for (int i = 0; i < lista.Count; i++)
+                    {
+                        foreach(Corso corsoLista in lista[i].Corsi)
+                        {
+                            if (corso.Proprietario == lista[i].Cognome && corso.Id == corsoLista.Id)
+                            {
+                                corso.Materiali.RemoveAll(item => item is string);
+                                foreach(var materiale in corsoLista.Materiali)
+                                {
+                                    corso.Materiali.Add(materiale);
+                                }
+                            }
+                        }
+                        
+                    }
                 }
+
+                SalvaDati(utenteAttuale);
+                VisualizzaFile();
             }
         }
     }
