@@ -50,6 +50,7 @@
             // flowLayoutPanel1
             // 
             this.flowLayoutPanel1.AutoScroll = true;
+            this.flowLayoutPanel1.BackColor = System.Drawing.Color.MediumPurple;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(216, 191);
             this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
@@ -58,7 +59,7 @@
             // 
             // aggiungiElemento
             // 
-            this.aggiungiElemento.Location = new System.Drawing.Point(252, 139);
+            this.aggiungiElemento.Location = new System.Drawing.Point(216, 139);
             this.aggiungiElemento.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.aggiungiElemento.Name = "aggiungiElemento";
             this.aggiungiElemento.Size = new System.Drawing.Size(436, 39);
@@ -80,13 +81,14 @@
             // 
             // VisualizzaPartecipantiButton
             // 
-            this.VisualizzaPartecipantiButton.Location = new System.Drawing.Point(687, 139);
+            this.VisualizzaPartecipantiButton.BackColor = System.Drawing.SystemColors.Window;
+            this.VisualizzaPartecipantiButton.Location = new System.Drawing.Point(658, 139);
             this.VisualizzaPartecipantiButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.VisualizzaPartecipantiButton.Name = "VisualizzaPartecipantiButton";
             this.VisualizzaPartecipantiButton.Size = new System.Drawing.Size(436, 39);
             this.VisualizzaPartecipantiButton.TabIndex = 2;
             this.VisualizzaPartecipantiButton.Text = "Visualizza Partecipanti";
-            this.VisualizzaPartecipantiButton.UseVisualStyleBackColor = true;
+            this.VisualizzaPartecipantiButton.UseVisualStyleBackColor = false;
             // 
             // RicaricaButton
             // 
@@ -103,6 +105,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.MediumPurple;
             this.ClientSize = new System.Drawing.Size(1359, 642);
             this.Controls.Add(this.VisualizzaPartecipantiButton);
             this.Controls.Add(this.RicaricaButton);

@@ -65,7 +65,7 @@
             this.panelLogin.Controls.Add(this.label2);
             this.panelLogin.Controls.Add(this.label1);
             this.panelLogin.Location = new System.Drawing.Point(5, 67);
-            this.panelLogin.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panelLogin.Margin = new System.Windows.Forms.Padding(4);
             this.panelLogin.Name = "panelLogin";
             this.panelLogin.Size = new System.Drawing.Size(371, 354);
             this.panelLogin.TabIndex = 0;
@@ -73,7 +73,7 @@
             // passwordLogin
             // 
             this.passwordLogin.Location = new System.Drawing.Point(145, 111);
-            this.passwordLogin.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.passwordLogin.Margin = new System.Windows.Forms.Padding(4);
             this.passwordLogin.Name = "passwordLogin";
             this.passwordLogin.Size = new System.Drawing.Size(132, 22);
             this.passwordLogin.TabIndex = 4;
@@ -82,7 +82,7 @@
             // emailLogin
             // 
             this.emailLogin.Location = new System.Drawing.Point(147, 59);
-            this.emailLogin.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.emailLogin.Margin = new System.Windows.Forms.Padding(4);
             this.emailLogin.Name = "emailLogin";
             this.emailLogin.Size = new System.Drawing.Size(132, 22);
             this.emailLogin.TabIndex = 3;
@@ -90,7 +90,7 @@
             // buttonLogin
             // 
             this.buttonLogin.Location = new System.Drawing.Point(85, 283);
-            this.buttonLogin.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonLogin.Margin = new System.Windows.Forms.Padding(4);
             this.buttonLogin.Name = "buttonLogin";
             this.buttonLogin.Size = new System.Drawing.Size(207, 43);
             this.buttonLogin.TabIndex = 2;
@@ -135,7 +135,7 @@
             this.panelRegister.Controls.Add(this.label4);
             this.panelRegister.Controls.Add(this.label3);
             this.panelRegister.Location = new System.Drawing.Point(3, 67);
-            this.panelRegister.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panelRegister.Margin = new System.Windows.Forms.Padding(4);
             this.panelRegister.Name = "panelRegister";
             this.panelRegister.Size = new System.Drawing.Size(371, 354);
             this.panelRegister.TabIndex = 1;
@@ -144,7 +144,7 @@
             // 
             this.radioButtonProfessore.AutoSize = true;
             this.radioButtonProfessore.Location = new System.Drawing.Point(189, 238);
-            this.radioButtonProfessore.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.radioButtonProfessore.Margin = new System.Windows.Forms.Padding(4);
             this.radioButtonProfessore.Name = "radioButtonProfessore";
             this.radioButtonProfessore.Size = new System.Drawing.Size(94, 20);
             this.radioButtonProfessore.TabIndex = 15;
@@ -156,7 +156,7 @@
             // 
             this.radioButtonStudente.AutoSize = true;
             this.radioButtonStudente.Location = new System.Drawing.Point(68, 238);
-            this.radioButtonStudente.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.radioButtonStudente.Margin = new System.Windows.Forms.Padding(4);
             this.radioButtonStudente.Name = "radioButtonStudente";
             this.radioButtonStudente.Size = new System.Drawing.Size(81, 20);
             this.radioButtonStudente.TabIndex = 14;
@@ -167,23 +167,25 @@
             // confPasswordRegistra
             // 
             this.confPasswordRegistra.Location = new System.Drawing.Point(153, 188);
-            this.confPasswordRegistra.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.confPasswordRegistra.Margin = new System.Windows.Forms.Padding(4);
             this.confPasswordRegistra.Name = "confPasswordRegistra";
             this.confPasswordRegistra.Size = new System.Drawing.Size(132, 22);
             this.confPasswordRegistra.TabIndex = 13;
+            this.confPasswordRegistra.UseSystemPasswordChar = true;
             // 
             // passwordRegistra
             // 
             this.passwordRegistra.Location = new System.Drawing.Point(153, 153);
-            this.passwordRegistra.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.passwordRegistra.Margin = new System.Windows.Forms.Padding(4);
             this.passwordRegistra.Name = "passwordRegistra";
             this.passwordRegistra.Size = new System.Drawing.Size(132, 22);
             this.passwordRegistra.TabIndex = 12;
+            this.passwordRegistra.UseSystemPasswordChar = true;
             // 
             // emailRegistra
             // 
             this.emailRegistra.Location = new System.Drawing.Point(153, 111);
-            this.emailRegistra.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.emailRegistra.Margin = new System.Windows.Forms.Padding(4);
             this.emailRegistra.Name = "emailRegistra";
             this.emailRegistra.Size = new System.Drawing.Size(132, 22);
             this.emailRegistra.TabIndex = 11;
@@ -191,7 +193,7 @@
             // cognomeRegistra
             // 
             this.cognomeRegistra.Location = new System.Drawing.Point(153, 73);
-            this.cognomeRegistra.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cognomeRegistra.Margin = new System.Windows.Forms.Padding(4);
             this.cognomeRegistra.Name = "cognomeRegistra";
             this.cognomeRegistra.Size = new System.Drawing.Size(132, 22);
             this.cognomeRegistra.TabIndex = 10;
@@ -199,7 +201,7 @@
             // nomeRegistra
             // 
             this.nomeRegistra.Location = new System.Drawing.Point(153, 27);
-            this.nomeRegistra.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.nomeRegistra.Margin = new System.Windows.Forms.Padding(4);
             this.nomeRegistra.Name = "nomeRegistra";
             this.nomeRegistra.Size = new System.Drawing.Size(132, 22);
             this.nomeRegistra.TabIndex = 5;
@@ -207,7 +209,7 @@
             // buttonRegister
             // 
             this.buttonRegister.Location = new System.Drawing.Point(85, 294);
-            this.buttonRegister.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonRegister.Margin = new System.Windows.Forms.Padding(4);
             this.buttonRegister.Name = "buttonRegister";
             this.buttonRegister.Size = new System.Drawing.Size(207, 43);
             this.buttonRegister.TabIndex = 5;
@@ -268,7 +270,7 @@
             // buttonLoginPanel
             // 
             this.buttonLoginPanel.Location = new System.Drawing.Point(3, 4);
-            this.buttonLoginPanel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonLoginPanel.Margin = new System.Windows.Forms.Padding(4);
             this.buttonLoginPanel.Name = "buttonLoginPanel";
             this.buttonLoginPanel.Size = new System.Drawing.Size(181, 55);
             this.buttonLoginPanel.TabIndex = 2;
@@ -279,7 +281,7 @@
             // buttonRegisterPanel
             // 
             this.buttonRegisterPanel.Location = new System.Drawing.Point(193, 4);
-            this.buttonRegisterPanel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonRegisterPanel.Margin = new System.Windows.Forms.Padding(4);
             this.buttonRegisterPanel.Name = "buttonRegisterPanel";
             this.buttonRegisterPanel.Size = new System.Drawing.Size(181, 55);
             this.buttonRegisterPanel.TabIndex = 3;
@@ -303,7 +305,7 @@
             this.Controls.Add(this.buttonLoginPanel);
             this.Controls.Add(this.panelLogin);
             this.Controls.Add(this.panelRegister);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Form1";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);

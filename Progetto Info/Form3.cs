@@ -30,6 +30,14 @@ namespace Progetto_Info
 
         private void Form3_Load(object sender, EventArgs e)
         {
+            if(utenteAttuale.Ruolo == "Professore")
+            {
+                RicaricaButton.Hide();
+            }
+            else
+            {
+                aggiungiElemento.Hide();
+            }
             VisualizzaFile();
         }
 
@@ -93,7 +101,7 @@ namespace Progetto_Info
         {
             GroupBox groupBoxFile = new GroupBox();
             groupBoxFile.Text = System.IO.Path.GetFileName(pathFile);
-            groupBoxFile.Width = 645;
+            groupBoxFile.Width = 650;
             groupBoxFile.Height = 70;
 
             Button buttonVisualizza = new Button();
@@ -103,6 +111,7 @@ namespace Progetto_Info
                 System.Diagnostics.Process.Start(pathFile);
             };
             groupBoxFile.Controls.Add(buttonVisualizza);
+            buttonVisualizza.BackColor = System.Drawing.Color.White;
             buttonVisualizza.Dock = DockStyle.Fill;
 
             FlowLayoutPanel flowLayoutPanelMateriali = (FlowLayoutPanel)this.Controls["flowLayoutPanel1"];
@@ -141,7 +150,8 @@ namespace Progetto_Info
 
         private void RicaricaButton_Click(object sender, EventArgs e)
         {
-            if(utenteAttuale.Ruolo == "Studente")
+            RemoveGroupBoxesWithButton();
+            if (utenteAttuale.Ruolo == "Studente")
             {
                 List<Account> lista = JsonConvert.DeserializeObject<List<Account>>(File.ReadAllText(nomeFile));
                 
@@ -168,5 +178,27 @@ namespace Progetto_Info
                 VisualizzaFile();
             }
         }
+
+        private void RemoveGroupBoxesWithButton()
+        {
+            FlowLayoutPanel flowLayoutPanelMateriali = (FlowLayoutPanel)this.Controls["flowLayoutPanel1"];
+            for (int i = flowLayoutPanelMateriali.Controls.Count - 1; i >= 0; i--)
+            {
+                GroupBox groupBox = flowLayoutPanelMateriali.Controls[i] as GroupBox;
+                if (groupBox != null)
+                {
+                    foreach (Control control in groupBox.Controls)
+                    {
+                        if (control is Button)
+                        {
+                            flowLayoutPanelMateriali.Controls.Remove(groupBox);
+                            break;
+                        }
+                    }
+                }
+            }
+        }
+
+
     }
 }
