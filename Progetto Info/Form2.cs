@@ -94,6 +94,7 @@ namespace Progetto_Info
                 if (!string.IsNullOrEmpty(corsoNome))
                 {
                     Corso nuovoCorso = new Corso(corsoNome, utenteAttuale.Cognome);
+                    nuovoCorso.Partecipanti.Add(utenteAttuale.Nome + " " + utenteAttuale.Cognome);
                     utenteAttuale.Corsi.Add(nuovoCorso);
                     SalvaDati(utenteAttuale);
 
@@ -118,10 +119,12 @@ namespace Progetto_Info
                     {
                         foreach(Corso corso in lista[i].Corsi)
                         {
-                            if(corso.Id == corsoID)
+                            if(corso.Id == corsoID && corso.Proprietario == lista[i].Cognome)
                             {
                                 utenteAttuale.Corsi.Add(corso);
+                                corso.Partecipanti.Add(utenteAttuale.Nome + " " + utenteAttuale.Cognome);
                                 SalvaDati(utenteAttuale);
+                                AggiornaPartecipanti(corso.Id, utenteAttuale);
                                 displayCorso(corso.Nome, corso.Id);
                                 break;
                             }
@@ -132,6 +135,27 @@ namespace Progetto_Info
                 }
             }
             
+        }
+
+        private void AggiornaPartecipanti(string corsoID, Account account)
+        {
+            List<Account> lista = JsonConvert.DeserializeObject<List<Account>>(File.ReadAllText(nomeFile));
+
+            for (int i = 0; i < lista.Count; i++)
+            {
+                if (lista[i].Cognome != account.Cognome)
+                {
+                    foreach (Corso corso in lista[i].Corsi)
+                    {
+                        if (corso.Id == corsoID)
+                        {
+                            corso.Partecipanti.Add(account.Nome + " " + account.Cognome);
+                            SalvaDati(lista[i]);
+                        }
+                    }
+                }
+                
+            }
         }
 
         private void displayCorso(string corsoNome, string corsoID)

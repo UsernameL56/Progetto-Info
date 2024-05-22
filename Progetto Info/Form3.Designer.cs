@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.aggiungiElemento = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
             this.VisualizzaPartecipantiButton = new System.Windows.Forms.Button();
             this.RicaricaButton = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
@@ -46,6 +46,17 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1378, 130);
             this.panel1.TabIndex = 0;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Swis721 Blk BT", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label1.Location = new System.Drawing.Point(377, 22);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(353, 96);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "CORSO";
             // 
             // flowLayoutPanel1
             // 
@@ -68,17 +79,6 @@
             this.aggiungiElemento.UseVisualStyleBackColor = true;
             this.aggiungiElemento.Click += new System.EventHandler(this.aggiungiElemento_Click);
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Swis721 Blk BT", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label1.Location = new System.Drawing.Point(537, 22);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(353, 96);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "CORSO";
-            // 
             // VisualizzaPartecipantiButton
             // 
             this.VisualizzaPartecipantiButton.BackColor = System.Drawing.SystemColors.Window;
@@ -89,6 +89,7 @@
             this.VisualizzaPartecipantiButton.TabIndex = 2;
             this.VisualizzaPartecipantiButton.Text = "Visualizza Partecipanti";
             this.VisualizzaPartecipantiButton.UseVisualStyleBackColor = false;
+            this.VisualizzaPartecipantiButton.Click += new System.EventHandler(this.VisualizzaPartecipantiButton_Click);
             // 
             // RicaricaButton
             // 

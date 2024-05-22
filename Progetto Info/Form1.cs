@@ -41,6 +41,7 @@ namespace Progetto_Info
 
         private void buttonLogin_Click(object sender, EventArgs e)
         {
+           
 
             List<Account> lista = JsonConvert.DeserializeObject<List<Account>>(File.ReadAllText("file.json"));
 
@@ -50,6 +51,7 @@ namespace Progetto_Info
                 {
                     utenteAttuale = account;
                     creazioneForm2();
+                    PuliziaTextBox();
                     return;
                 }
 
@@ -61,7 +63,8 @@ namespace Progetto_Info
         private void buttonRegister_Click(object sender, EventArgs e)
         {
             string json = "";
-            
+
+
             List<Account> account = new List<Account>();
             Account nuovoAccount = new Account();
             nuovoAccount.Nome = nomeRegistra.Text;
@@ -89,6 +92,7 @@ namespace Progetto_Info
                 File.WriteAllText(nomeFile, json);
                 utenteAttuale = nuovoAccount;
                 creazioneForm2();
+                PuliziaTextBox();
                 return;
             }
 
@@ -108,8 +112,22 @@ namespace Progetto_Info
 
             utenteAttuale = nuovoAccount;
             creazioneForm2();
+            PuliziaTextBox();
         }
 
+        private void PuliziaTextBox()
+        {
+            emailLogin.Clear();
+            passwordLogin.Clear();
+
+            nomeRegistra.Clear();
+            cognomeRegistra.Clear();
+            emailRegistra.Clear();
+            passwordRegistra.Clear();
+            confPasswordRegistra.Clear();
+            radioButtonProfessore.Checked = false;
+            radioButtonStudente.Checked = false;
+        }
         private void creazioneForm2()
         {
             Form2 form2 = new Form2(this);

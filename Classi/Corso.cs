@@ -14,6 +14,7 @@ namespace Classi
         private string _nome;
         private string _proprietario;
         private List<string> _materiali;
+        private List<string> _partecipanti;
 
         // metodi accessor
         public string Id
@@ -36,6 +37,11 @@ namespace Classi
             get { return _materiali; }
             set { _materiali = value; }
         }
+        public List<string> Partecipanti
+        {
+            get { return _partecipanti; }
+            set { _partecipanti = value; }
+        }
 
         // costruttore
         public Corso(string _nome, string _proprietario)
@@ -44,6 +50,7 @@ namespace Classi
             Nome = _nome;
             Proprietario = _proprietario;
             Materiali = new List<string>();
+            Partecipanti = new List<string>();
         }
 
         // metodi

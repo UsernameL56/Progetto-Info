@@ -303,8 +303,8 @@
             this.ClientSize = new System.Drawing.Size(377, 423);
             this.Controls.Add(this.buttonRegisterPanel);
             this.Controls.Add(this.buttonLoginPanel);
-            this.Controls.Add(this.panelLogin);
             this.Controls.Add(this.panelRegister);
+            this.Controls.Add(this.panelLogin);
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Form1";
             this.Text = "Form1";

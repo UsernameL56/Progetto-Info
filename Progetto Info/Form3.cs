@@ -26,6 +26,13 @@ namespace Progetto_Info
             form2 = _form2;
             corsoID = _corsoID;
             nomeFile = _form2.nomeFile;
+            foreach(Corso corso in utenteAttuale.Corsi)
+            {
+                if(corso.Id == corsoID)
+                {
+                    corsoCorrente = corso;
+                }
+            }
         }
 
         private void Form3_Load(object sender, EventArgs e)
@@ -39,18 +46,6 @@ namespace Progetto_Info
                 aggiungiElemento.Hide();
             }
             VisualizzaFile();
-        }
-
-        private void CaricamentoFile()
-        {
-            Corso corso = form2.utenteAttuale.Corsi.FirstOrDefault(c => c.Id == corsoID);
-            if (corso != null)
-            {
-                foreach (var file in corso.Materiali)
-                {
-                    AggiungiFile(file);
-                }
-            }
         }
 
         private void Form3_FormClosed(object sender, FormClosedEventArgs e)
@@ -199,6 +194,9 @@ namespace Progetto_Info
             }
         }
 
+        private void VisualizzaPartecipantiButton_Click(object sender, EventArgs e)
+        {
 
+        }
     }
 }
