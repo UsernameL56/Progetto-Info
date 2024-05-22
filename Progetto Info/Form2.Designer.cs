@@ -28,42 +28,30 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.temp = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.BackToButton = new Classi.RoundButton();
             this.flowLayoutPanelCorsi = new System.Windows.Forms.FlowLayoutPanel();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.buttonCreaCorso = new System.Windows.Forms.Button();
             this.nomeCorso = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.BackToButton = new Classi.RoundButton();
             this.panel3.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.MediumPurple;
-            this.panel1.Location = new System.Drawing.Point(3, 89);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(308, 537);
-            this.panel1.TabIndex = 0;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Swis721 BlkCn BT", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label1.Location = new System.Drawing.Point(87, 23);
+            this.label1.Location = new System.Drawing.Point(36, 27);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(104, 36);
+            this.label1.Size = new System.Drawing.Size(192, 36);
             this.label1.TabIndex = 0;
-            this.label1.Text = "TITOLO";
+            this.label1.Text = "COURSE NEST";
             // 
             // temp
             // 
@@ -88,11 +76,22 @@
             this.panel3.Size = new System.Drawing.Size(1373, 84);
             this.panel3.TabIndex = 2;
             // 
+            // BackToButton
+            // 
+            this.BackToButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 22.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BackToButton.Location = new System.Drawing.Point(1282, 10);
+            this.BackToButton.Name = "BackToButton";
+            this.BackToButton.Size = new System.Drawing.Size(65, 65);
+            this.BackToButton.TabIndex = 4;
+            this.BackToButton.Text = " ";
+            this.BackToButton.UseVisualStyleBackColor = true;
+            this.BackToButton.Click += new System.EventHandler(this.BackToButton_Click);
+            // 
             // flowLayoutPanelCorsi
             // 
             this.flowLayoutPanelCorsi.AutoScroll = true;
             this.flowLayoutPanelCorsi.BackColor = System.Drawing.Color.MediumPurple;
-            this.flowLayoutPanelCorsi.Location = new System.Drawing.Point(471, 89);
+            this.flowLayoutPanelCorsi.Location = new System.Drawing.Point(275, 89);
             this.flowLayoutPanelCorsi.Margin = new System.Windows.Forms.Padding(4);
             this.flowLayoutPanelCorsi.Name = "flowLayoutPanelCorsi";
             this.flowLayoutPanelCorsi.Size = new System.Drawing.Size(805, 537);
@@ -103,8 +102,6 @@
             this.groupBox1.Controls.Add(this.buttonCreaCorso);
             this.groupBox1.Controls.Add(this.nomeCorso);
             this.groupBox1.Controls.Add(this.label4);
-            this.groupBox1.Controls.Add(this.comboBox1);
-            this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Location = new System.Drawing.Point(505, 202);
             this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox1.Name = "groupBox1";
@@ -144,60 +141,14 @@
             this.label4.TabIndex = 2;
             this.label4.Text = "Nome Corso";
             // 
-            // comboBox1
-            // 
-            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
-            "Matematica",
-            "Italiano",
-            "Storia",
-            "Inglese",
-            "Geografia",
-            "Chimica",
-            "Informatica",
-            "Telecomunicazioni",
-            "Sistemi e Reti",
-            "Tecnologie e Progettazione",
-            "Educazione Fisica",
-            "Religione",
-            "Altro"});
-            this.comboBox1.Location = new System.Drawing.Point(121, 121);
-            this.comboBox1.Margin = new System.Windows.Forms.Padding(4);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(160, 24);
-            this.comboBox1.TabIndex = 1;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(27, 121);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(65, 16);
-            this.label3.TabIndex = 0;
-            this.label3.Text = "Tipologia";
-            // 
-            // BackToButton
-            // 
-            this.BackToButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 22.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BackToButton.Location = new System.Drawing.Point(1282, 10);
-            this.BackToButton.Name = "BackToButton";
-            this.BackToButton.Size = new System.Drawing.Size(65, 65);
-            this.BackToButton.TabIndex = 4;
-            this.BackToButton.Text = " ";
-            this.BackToButton.UseVisualStyleBackColor = true;
-            this.BackToButton.Click += new System.EventHandler(this.BackToButton_Click);
-            // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.MediumPurple;
             this.ClientSize = new System.Drawing.Size(1359, 642);
-            this.Controls.Add(this.flowLayoutPanelCorsi);
             this.Controls.Add(this.panel3);
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.flowLayoutPanelCorsi);
             this.Controls.Add(this.groupBox1);
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Form2";
@@ -213,15 +164,11 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button temp;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanelCorsi;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button buttonCreaCorso;
         private System.Windows.Forms.TextBox nomeCorso;
         private System.Windows.Forms.Label label4;

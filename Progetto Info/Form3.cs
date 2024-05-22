@@ -46,6 +46,7 @@ namespace Progetto_Info
                 aggiungiElemento.Hide();
             }
             VisualizzaFile();
+            label1.Text = corsoCorrente.Nome;
         }
 
         private void Form3_FormClosed(object sender, FormClosedEventArgs e)
@@ -197,6 +198,55 @@ namespace Progetto_Info
         private void VisualizzaPartecipantiButton_Click(object sender, EventArgs e)
         {
 
+            panel2.BringToFront();
+
+            List<Account> lista = JsonConvert.DeserializeObject<List<Account>>(File.ReadAllText(nomeFile));
+            List<string> professori = new List<string>();
+            List<string> studenti = new List<string>();
+
+            foreach (Account account in lista)
+            {
+                foreach (Corso corso in account.Corsi)
+                {
+                    if (corso.Id == corsoID)
+                    {
+                        if (account.Ruolo == "Professore")
+                        {
+                            professori.Add(account.Nome + " " + account.Cognome);
+                        }
+                        else
+                        {
+                            studenti.Add(account.Nome + " " + account.Cognome);
+                        }
+                    }
+                }
+            }
+
+            flowLayoutPanelProfessore.Controls.Clear();
+            flowLayoutPanelProfessore.Controls.Clear();
+            foreach (string professore in professori)
+            {
+                Label labelProfessore = new Label();
+                labelProfessore.Text = professore;
+                labelProfessore.AutoSize = true;
+                labelProfessore.ForeColor = Color.White;
+                flowLayoutPanelProfessore.Controls.Add(labelProfessore);
+            }
+
+            flowLayoutPanelStudenti.Controls.Clear();
+            foreach (string studente in studenti)
+            {
+                Label labelStudente = new Label();
+                labelStudente.Text = studente;
+                labelStudente.AutoSize = true;
+                labelStudente.ForeColor = Color.White;
+                flowLayoutPanelStudenti.Controls.Add(labelStudente);
+            }
+        }
+
+        private void VisualizzaMaterialeButton_Click(object sender, EventArgs e)
+        {
+            flowLayoutPanel1.BringToFront();
         }
     }
 }

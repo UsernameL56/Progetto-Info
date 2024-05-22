@@ -35,8 +35,6 @@ namespace Progetto_Info
             if(utenteAttuale.Ruolo == "Studente")
             {
                 label4.Text = "Inserisci ID\n corso";
-                label3.Hide();
-                comboBox1.Hide();
                 buttonCreaCorso.Text = "Unisciti al Corso";
             }
 
