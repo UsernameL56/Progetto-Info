@@ -111,7 +111,6 @@ namespace Progetto_Info
         
         private void VisualizzaFile()
         {
-            int temp = 0;
             List<Account> lista = JsonConvert.DeserializeObject<List<Account>>(File.ReadAllText(nomeFile));
 
             Stack<string> stack = new Stack<string>();
