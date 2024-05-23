@@ -41,6 +41,7 @@ namespace Progetto_Info
 
         private void buttonLogin_Click(object sender, EventArgs e)
         {
+           
 
             List<Account> lista = JsonConvert.DeserializeObject<List<Account>>(File.ReadAllText("file.json"));
 
@@ -50,6 +51,7 @@ namespace Progetto_Info
                 {
                     utenteAttuale = account;
                     creazioneForm2();
+                    PuliziaTextBox();
                     return;
                 }
 
@@ -61,7 +63,21 @@ namespace Progetto_Info
         private void buttonRegister_Click(object sender, EventArgs e)
         {
             string json = "";
-            
+
+            if (!ControllaCampiCompilati())
+            {
+                MessageBox.Show("Tutti i campi devono essere compilati");
+                return;
+            }
+
+            string email = emailRegistra.Text;
+
+            if (!ControllaFormatoEmail(email))
+            {
+                MessageBox.Show("L'email deve essere nel formato @gmail.com");
+                return;
+            }
+
             List<Account> account = new List<Account>();
             Account nuovoAccount = new Account();
             nuovoAccount.Nome = nomeRegistra.Text;
@@ -89,6 +105,7 @@ namespace Progetto_Info
                 File.WriteAllText(nomeFile, json);
                 utenteAttuale = nuovoAccount;
                 creazioneForm2();
+                PuliziaTextBox();
                 return;
             }
 
@@ -108,8 +125,50 @@ namespace Progetto_Info
 
             utenteAttuale = nuovoAccount;
             creazioneForm2();
+            PuliziaTextBox();
         }
 
+
+        private bool ControllaCampiCompilati()
+        {
+            if (string.IsNullOrWhiteSpace(nomeRegistra.Text) ||
+                string.IsNullOrWhiteSpace(cognomeRegistra.Text) ||
+                string.IsNullOrWhiteSpace(emailRegistra.Text) ||
+                string.IsNullOrWhiteSpace(passwordRegistra.Text) ||
+                string.IsNullOrWhiteSpace(confPasswordRegistra.Text) ||
+                (!radioButtonProfessore.Checked && !radioButtonStudente.Checked))
+            {
+                return false;
+            }
+            return true;
+        }
+
+        private bool ControllaFormatoEmail(string email)
+        {
+            try
+            {
+                var addr = new MailAddress(email);
+                return addr.Host.ToLower() == "gmail.com";
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
+        private void PuliziaTextBox()
+        {
+            emailLogin.Clear();
+            passwordLogin.Clear();
+
+            nomeRegistra.Clear();
+            cognomeRegistra.Clear();
+            emailRegistra.Clear();
+            passwordRegistra.Clear();
+            confPasswordRegistra.Clear();
+            radioButtonProfessore.Checked = false;
+            radioButtonStudente.Checked = false;
+        }
         private void creazioneForm2()
         {
             Form2 form2 = new Form2(this);

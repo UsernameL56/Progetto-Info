@@ -20,23 +20,32 @@ namespace Progetto_Info
     {
         private Form1 form1;
         public string nomeFile;
+        bool chiusuraForm;
        public Account utenteAttuale => form1.utenteAttuale;
         public Form2(Form1 _form1)
         {
             InitializeComponent();
             form1 = _form1;
             nomeFile = form1.nomeFile;
+            chiusuraForm = true;
         }
 
         private void Form2_Load(object sender, EventArgs e)
         {
+            if(utenteAttuale.Ruolo == "Studente")
+            {
+                label4.Text = "Inserisci ID\n corso";
+                buttonCreaCorso.Text = "Unisciti al Corso";
+            }
+
             List<Account> lista = JsonConvert.DeserializeObject<List<Account>>(File.ReadAllText(nomeFile));
 
             for (int i = 0; i < lista.Count; i++)
             {
                 if (lista[i].Email == utenteAttuale.Email)
                 {
-                    foreach(Corso nuovoCorso in utenteAttuale.Corsi)
+                    BackToButton.Text = utenteAttuale.Nome.Substring(0, 1);
+                    foreach (Corso nuovoCorso in utenteAttuale.Corsi)
                     {
                         GroupBox corso = new GroupBox();
                         corso.Text = nuovoCorso.Nome;
@@ -57,7 +66,15 @@ namespace Progetto_Info
 
         private void Form2_FormClosed(object sender, FormClosedEventArgs e)
         {
-            form1.Close();
+            if (chiusuraForm)
+            {
+                form1.Close();
+            }
+            else
+            {
+                chiusuraForm = true;
+            }
+            
         }
 
         private void temp_Click(object sender, EventArgs e)
@@ -68,36 +85,95 @@ namespace Progetto_Info
 
         private void buttonCreaCorso_Click(object sender, EventArgs e)
         {
-            string corsoNome = nomeCorso.Text;
-
-            if (!string.IsNullOrEmpty(corsoNome))
+            if(utenteAttuale.Ruolo == "Professore")
             {
-                Corso nuovoCorso = new Corso(corsoNome);
-                utenteAttuale.Corsi.Add(nuovoCorso);
-                SalvaDati(utenteAttuale);
+                string corsoNome = nomeCorso.Text;
 
-
-                GroupBox corso = new GroupBox();
-                corso.Text = corsoNome;
-                corso.Width = 250;
-                corso.Height = 150;
-                flowLayoutPanelCorsi.Controls.Add(corso);
-                groupBox1.Hide();
-                flowLayoutPanelCorsi.BringToFront();
-
-                corso.Click += (s, eArgs) =>
+                if (!string.IsNullOrEmpty(corsoNome))
                 {
-                    this.Hide();
-                    Form3 form3 = new Form3(this, nuovoCorso.Id);
-                    form3.Show();
-                };
+                    Corso nuovoCorso = new Corso(corsoNome, utenteAttuale.Cognome);
+                    nuovoCorso.Partecipanti.Add(utenteAttuale.Nome + " " + utenteAttuale.Cognome);
+                    utenteAttuale.Corsi.Add(nuovoCorso);
+                    SalvaDati(utenteAttuale);
+
+
+                    displayCorso(corsoNome, nuovoCorso.Id);
+
+                }
+                else
+                {
+                    MessageBox.Show("Inserisci il nome del corso.");
+                }
             }
             else
             {
-                MessageBox.Show("Inserisci il nome del corso.");
+                string corsoID = nomeCorso.Text;
+
+                if (!string.IsNullOrEmpty(corsoID))
+                {
+                    List<Account> lista = JsonConvert.DeserializeObject<List<Account>>(File.ReadAllText(nomeFile));
+
+                    for(int i = 0; i < lista.Count; i++)
+                    {
+                        foreach(Corso corso in lista[i].Corsi)
+                        {
+                            if(corso.Id == corsoID && corso.Proprietario == lista[i].Cognome)
+                            {
+                                utenteAttuale.Corsi.Add(corso);
+                                corso.Partecipanti.Add(utenteAttuale.Nome + " " + utenteAttuale.Cognome);
+                                SalvaDati(utenteAttuale);
+                                AggiornaPartecipanti(corso.Id, utenteAttuale);
+                                displayCorso(corso.Nome, corso.Id);
+                                break;
+                            }
+                        }
+                    }
+
+
+                }
+            }
+            
+        }
+
+        private void AggiornaPartecipanti(string corsoID, Account account)
+        {
+            List<Account> lista = JsonConvert.DeserializeObject<List<Account>>(File.ReadAllText(nomeFile));
+
+            for (int i = 0; i < lista.Count; i++)
+            {
+                if (lista[i].Cognome != account.Cognome)
+                {
+                    foreach (Corso corso in lista[i].Corsi)
+                    {
+                        if (corso.Id == corsoID)
+                        {
+                            corso.Partecipanti.Add(account.Nome + " " + account.Cognome);
+                            SalvaDati(lista[i]);
+                        }
+                    }
+                }
+                
             }
         }
 
+        private void displayCorso(string corsoNome, string corsoID)
+        {
+            GroupBox corso = new GroupBox();
+            corso.Text = corsoNome;
+            corso.Width = 250;
+            corso.Height = 150;
+            flowLayoutPanelCorsi.Controls.Add(corso);
+            groupBox1.Hide();
+            flowLayoutPanelCorsi.BringToFront();
+
+            corso.Click += (s, eArgs) =>
+            {
+                this.Hide();
+                Form3 form3 = new Form3(this, corsoID);
+                form3.Show();
+            };
+
+        }
         private void SalvaDati(Account account)
         {
             List<Account> lista = JsonConvert.DeserializeObject<List<Account>>(File.ReadAllText(nomeFile));
@@ -113,6 +189,13 @@ namespace Progetto_Info
 
             string json = JsonConvert.SerializeObject(lista, Formatting.Indented);
             File.WriteAllText(nomeFile, json);
+        }
+
+        private void BackToButton_Click(object sender, EventArgs e)
+        {
+            chiusuraForm = false;
+            this.Close();
+            form1.Show();
         }
     }
 }
